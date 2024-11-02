@@ -51,6 +51,15 @@ model product {
   order_line          order_line[]
 }
 
+model users {
+  user_id    Int       @id @default(autoincrement())
+  username   String    @unique @db.VarChar(50)
+  password   String    @db.VarChar(50)
+  email      String    @unique @db.VarChar(255)
+  created_on DateTime  @db.Timestamp(6)
+  last_login DateTime? @db.Timestamp(6)
+}
+
 enum colors {
   Cherry
   Natural_Ash @map("Natural Ash")
@@ -59,4 +68,3 @@ enum colors {
   Natural_Oak @map("Natural Oak")
   Walnut
 }
-
