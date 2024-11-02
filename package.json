@@ -6,7 +6,11 @@
 		"build": "bun build src/index.ts --target bun --outdir ./dist",
 		"start": "NODE_ENV=production bun dist/index.js",
 		"test": "bun test",
-		"seed": "tsx prisma/seed.ts"
+		"seed": "tsx prisma/seed.ts",
+		"db:generate": "prisma generate",
+		"db:migrate": "prisma migrate dev",
+		"db:studio": "prisma studio",
+		"format": "prettier --write ."
 	},
 	"dependencies": {
 		"@elysiajs/swagger": "1.0.5",
